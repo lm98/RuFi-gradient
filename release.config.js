@@ -17,7 +17,7 @@ git push --force origin \${nextRelease.version} || exit 2
 cargo package || exit 3
 cargo publish || exit 4
 `
-const releaseBranches = ["main"]
+const releaseBranches = ["main", "master"]
 config.branches = releaseBranches
 config.plugins.push(
     ["@semantic-release/exec", {
