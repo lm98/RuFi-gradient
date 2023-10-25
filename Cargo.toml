@@ -4,6 +4,9 @@ version = "1.0.0"
 edition = "2021"
 license = "Apache-2.0"
 description = "A simple aggregate program implementing the gradient with the RuFi framework"
+homepage = "https://github.com/lm98/RuFi-gradient"
+documentation = "https://github.com/lm98/RuFi-gradient"
+repository = "https://github.com/lm98/RuFi-gradient"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
