@@ -7,6 +7,7 @@ description = "A simple aggregate program implementing the gradient with the RuF
 homepage = "https://github.com/lm98/RuFi-gradient"
 documentation = "https://github.com/lm98/RuFi-gradient"
 repository = "https://github.com/lm98/RuFi-gradient"
+readme = "README.md"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
