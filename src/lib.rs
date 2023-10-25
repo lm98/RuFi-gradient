@@ -4,6 +4,12 @@ use rufi_core::core::sensor_id::sensor;
 use rufi_core::core::vm::round_vm::RoundVM;
 use rufi_core::{foldhood_plus, lift};
 
+/// Compute the gradient of a source.
+/// N.B. The source must be present in the local [Context] by setting the "source" [Sensor] to true.
+/// # Arguments:
+/// * `vm` - The RoundVM to compute the gradient on.
+/// # Returns:
+/// * `(RoundVM, f64)` - A tuple with the RoundVM after the gradient has been computed and the distance from the source.
 pub fn gradient(vm: RoundVM) -> (RoundVM, f64) {
     fn is_source(vm: RoundVM) -> (RoundVM, bool) {
         let val = vm.local_sense::<bool>(&sensor("source")).unwrap().clone();
