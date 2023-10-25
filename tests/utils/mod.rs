@@ -1,8 +1,8 @@
+use rufi_core::core::export::Export;
+use rufi_core::core::sensor_id::SensorId;
 use std::any::Any;
 use std::collections::HashMap;
 use std::rc::Rc;
-use rufi_core::core::export::Export;
-use rufi_core::core::sensor_id::SensorId;
 
 #[derive(Debug, Clone)]
 pub struct DeviceState {
@@ -26,10 +26,6 @@ pub struct Topology {
 
 impl Topology {
     pub fn new(devices: Vec<i32>, states: HashMap<i32, DeviceState>) -> Self {
-        Topology {
-            devices,
-            states,
-        }
+        Topology { devices, states }
     }
 }
-
