@@ -1,8 +1,8 @@
-use rufi_core::core::lang::builtins::{foldhood_plus, mux};
-use rufi_core::core::lang::lang::{nbr, rep};
-use rufi_core::core::sensor_id::sensor;
-use rufi_core::core::vm::round_vm::RoundVM;
-use rufi_core::{foldhood_plus, lift};
+use rf_core::lang::builtins::{foldhood_plus, mux};
+use rf_core::lang::{nbr, rep};
+use rf_core::sensor_id::sensor;
+use rf_core::vm::round_vm::RoundVM;
+use rf_core::{foldhood_plus, lift};
 
 /// Compute the gradient of a source.
 /// N.B. The source must be present in the local [Context] by setting the "source" [Sensor] to true.
