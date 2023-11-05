@@ -13,6 +13,7 @@ use std::any::Any;
 use std::collections::{HashMap, HashSet};
 use std::iter;
 use std::rc::Rc;
+use std::str::FromStr;
 use utils::{DeviceState, Topology};
 
 fn setup_test_topology(devices: Vec<i32>) -> Topology {
@@ -65,7 +66,7 @@ fn add_source(topology: &mut Topology, source: i32) {
 fn run_on_device<A, F: Copy>(program: F, mut topology: Topology, d: i32) -> Topology
 where
     F: Fn(RoundVM) -> (RoundVM, A),
-    A: Copy + 'static,
+    A: Clone + 'static + FromStr,
 {
     // Setup the VM
     let curr = topology.states.get(&d).unwrap().clone();
@@ -95,7 +96,7 @@ where
 fn run_on_topology<A, F>(program: F, mut topology: Topology, scheduling: &Vec<i32>) -> Topology
 where
     F: Fn(RoundVM) -> (RoundVM, A) + Copy,
-    A: Copy + 'static,
+    A: Clone + 'static + FromStr,
 {
     // For each device in the provided scheduling, run the program on the device.
     for d in scheduling {
