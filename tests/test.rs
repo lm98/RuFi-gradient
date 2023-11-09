@@ -72,7 +72,7 @@ where
     let curr = topology.states.get(&d).unwrap().clone();
     let ctx = Context::new(d, curr.local_sensor, curr.nbr_sensor, curr.exports);
     let mut vm = RoundVM::new(ctx);
-    vm.export_stack.push(Export::new());
+    vm.new_export_stack();
     // Run the program
     let (mut vm_, _res) = round(vm, program);
     // Update the topology with the new exports
