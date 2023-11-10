@@ -10,7 +10,7 @@ use rf_core::vm::round_vm::RoundVM;
 use rf_core::{export, path};
 use rufi_gradient::gradient;
 use std::any::Any;
-use std::collections::{HashMap, HashSet};
+use std::collections::HashMap;
 use std::iter;
 use std::rc::Rc;
 use std::str::FromStr;
@@ -237,22 +237,5 @@ fn test_exports() {
         ),
     ]);
 
-    for (d, e) in actual_exports.iter() {
-        let actual_root = e.root::<f64>();
-        let actual_paths = e
-            .paths()
-            .keys()
-            .map(|p| p.clone())
-            .collect::<HashSet<Path>>();
-        let expected_root = expected_exports.get(d).unwrap().root::<f64>();
-        let expected_paths = expected_exports
-            .get(d)
-            .unwrap()
-            .paths()
-            .keys()
-            .map(|p| p.clone())
-            .collect::<HashSet<Path>>();
-        assert_eq!(actual_root, expected_root);
-        assert_eq!(actual_paths, expected_paths);
-    }
+    assert_eq!(actual_exports, expected_exports);
 }
